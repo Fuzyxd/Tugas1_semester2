@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121213"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="WORDLE"
+                android:textColor="#FFFFFF"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1" />
+
+            <!-- Game Grid Container -->
+            <LinearLayout
+                android:id="@+id/gameGridContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="25dp">
+                <!-- Grid akan dibuat dinamis di kode -->
+            </LinearLayout>
+
+            <!-- Input Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:id="@+id/wordInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLength="5"
+                    android:hint="Masukkan 5 huruf"
+                    android:textSize="18sp"
+                    android:inputType="textCapCharacters"
+                    android:background="@drawable/edittext_background"
+                    android:padding="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TEBAK"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"
+                    android:padding="14dp"
+                    android:backgroundTint="#538D4E"
+                    android:stateListAnimator="@null"
+                    android:elevation="4dp" />
+
+            </LinearLayout>
+
+            <!-- Controls -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DELETE"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#818384"
+                    android:layout_marginEnd="8dp"
+                    android:padding="12dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="3dp" />
+
+                <Button
+                    android:id="@+id/newGameButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GAME BARU"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#538D4E"
+                    android:layout_marginEnd="8dp"
+                    android:padding="12dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="3dp" />
+
+                <Button
+                    android:id="@+id/hintButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HINT"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#B59F3B"
+                    android:padding="12dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="3dp" />
+
+            </LinearLayout>
+
+            <!-- Status Messages -->
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Masukkan kata 5 huruf"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:background="#2D2D2D"
+                android:backgroundTint="#2D2D2D"
+                android:layout_marginHorizontal="20dp"
+                android:letterSpacing="0.05" />
+
+            <!-- Stats -->
+            <LinearLayout
+                android:id="@+id/statsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:padding="12dp"
+                android:background="#2D2D2D"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/winCountTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Menang: 0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="24dp"
+                    android:background="#555555" />
+
+                <TextView
+                    android:id="@+id/streakTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Streak: 0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="24dp"
+                    android:background="#555555" />
+
+                <TextView
+                    android:id="@+id/bestScoreTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Best: 0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+            <!-- Spacer untuk memberikan ruang di bawah -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <!-- Video Container untuk Easter Egg (Hidden by default) -->
+        <LinearLayout
+            android:id="@+id/videoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@android:color/black">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ScrollView>

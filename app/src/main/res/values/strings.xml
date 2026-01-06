@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Wordle Indonesia</string>
+    <string name="title_wordle">WORDLE</string>
+    <string name="hint_input">Masukkan 5 huruf</string>
+    <string name="button_submit">TEBAK</string>
+    <string name="button_delete">DELETE</string>
+    <string name="button_new_game">GAME BARU</string>
+    <string name="button_hint">HINT</string>
+    <string name="status_default">Masukkan kata 5 huruf</string>
+    <string name="status_win">Selamat! Kamu menang!</string>
+    <string name="status_game_over">Game Over! Kata yang benar: %s</string>
+    <string name="toast_invalid_length">Kata harus 5 huruf!</string>
+    <string name="toast_invalid_word">Kata tidak valid!</string>
+    <string name="toast_game_over">Game sudah selesai!</string>
+    <string name="hint_message">Petunjuk: Huruf pertama adalah %s</string>
+</resources>
